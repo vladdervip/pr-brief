@@ -1,0 +1,98 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0f1115;
+  --card: #181b22;
+  --text: #e8eaed;
+  --muted: #9aa0a6;
+  --accent: #7aa2ff;
+  --border: #2a2f3a;
+  --ok: #3dd68c;
+  --warn: #f5a524;
+  --bad: #f31260;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6f7f9;
+    --card: #fff;
+    --text: #111;
+    --muted: #5f6368;
+    --border: #e3e5ea;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+h1 { margin: 0 0 0.25rem; font-size: 1.75rem; }
+.sub { margin: 0 0 1.5rem; color: var(--muted); }
+form {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+label { font-size: 0.9rem; color: var(--muted); }
+input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 1rem;
+}
+button {
+  justify-self: start;
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #0b1020;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:disabled { opacity: 0.6; cursor: wait; }
+.status { color: var(--muted); font-size: 0.95rem; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem;
+}
+.card h2 { margin: 0 0 0.35rem; font-size: 1.15rem; }
+.meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+.section { margin: 0.9rem 0; }
+.section h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.section pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: inherit;
+  line-height: 1.45;
+}
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.badge.ok { background: color-mix(in srgb, var(--ok) 25%, transparent); color: var(--ok); }
+.badge.warn { background: color-mix(in srgb, var(--warn) 25%, transparent); color: var(--warn); }
+.badge.bad { background: color-mix(in srgb, var(--bad) 25%, transparent); color: var(--bad); }
+a { color: var(--accent); }
